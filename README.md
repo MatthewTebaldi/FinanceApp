@@ -1,0 +1,2 @@
+# FinanceApp
+Track your spending!
