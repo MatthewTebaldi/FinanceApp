@@ -10,11 +10,11 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
+          
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -38,7 +38,7 @@
         
         
         
-        <NavigationView x:Name="NavView" Grid.Row="2">
+        <NavigationView x:Name="NavView" Grid.RowSpan="2">
 
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Uid="HomeNavItem" Content="Home" Tag="home">
@@ -61,23 +61,55 @@
                 </Frame.ContentTransitions>
             </Frame>
         </NavigationView>
-        
-        
-        
-        
-        
+
+
+
+
+
+
+        <StackPanel Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="4" >
+            <TextBlock Foreground="Black" FontSize="25" Text="Month" TextAlignment="Center" FontWeight="Bold" />
+         
+            <ListView x:Name="monthList"
+                       SelectionMode="None"
+    
+                ScrollViewer.HorizontalScrollMode="Disabled" 
+          ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+          ScrollViewer.VerticalScrollMode="Enabled"
+          ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalAlignment="Center" Canvas.ZIndex="-1" Margin="0,17,0,0">
+               
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                   
+                            <TextBlock x:Name="monthTextBlock" Text="{x:Bind}" TextAlignment="Right" Foreground="White" 
+                           FontSize="15" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+          
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <x:String>January</x:String>
+                <x:String>Feburary</x:String>
+                <x:String>March</x:String>
+                <x:String>April</x:String>
+                <x:String>May</x:String>
+                <x:String>June</x:String>
+                <x:String>July</x:String>
+                <x:String>August</x:String>
+                <x:String>September</x:String>
+                <x:String>October</x:String>
+                <x:String>November</x:String>
+                <x:String>December</x:String>
+               
+            </ListView>
+        </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="4" >
-            <TextBlock Foreground="Black" FontSize="25" Text="Month" TextAlignment="Center" FontWeight="Bold" />
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="4" >
             <TextBlock Foreground="#FF28C50F" FontSize="25" Text="Income" TextAlignment="Center" FontWeight="Bold" FocusVisualPrimaryBrush="#FF28C50F" />
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="4">
+        <StackPanel Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="4">
             <TextBlock Foreground="#FFF90F0F" FontSize="25" Text="Expense" TextAlignment="Center" FontWeight="Bold" />
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="4" BorderBrush="Black" BorderThickness="4">
+        <StackPanel Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="4">
             <TextBlock Foreground="Black" FontSize="25" Text="Difference" TextAlignment="Center" FontWeight="Bold" FocusVisualPrimaryBrush="#FFF90F0F" />
         </StackPanel>
 
