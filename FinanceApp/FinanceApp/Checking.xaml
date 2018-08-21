@@ -9,13 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="5*"/>
-        </Grid.ColumnDefinitions>
+    
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
 
         <Border Background="#2f5cb6"/>
@@ -46,5 +43,63 @@
             </Frame>
         </NavigationView>
 
+        
+        
+        
+        <ListView x:Name="listview 1" Grid.Row="1">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                  
+                        <TextBlock Text="Month" />
+                        <TextBlock Grid.Column="1" Text="Income" />
+                        <TextBlock Grid.Column="2" Text="Expense" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+
+
+
+
+            <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+                
+                <TextBlock Text="January" />
+                <TextBlock Grid.Row="1" Text="sdfsdfsdf" />
+                <TextBlock Grid.Row="2" Text="January" />
+                <TextBlock Grid.Row="3" Text="January" />
+            </Grid>
+         
+       
+          
+            
+    
+            
+       
+        </ListView>
+
+        
+        
+        
+        
     </Grid>
 </Page>
