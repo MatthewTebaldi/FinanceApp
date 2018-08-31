@@ -10,7 +10,6 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-          
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -26,18 +25,40 @@
         <Border  BorderBrush="Black" BorderThickness="4" 
          Grid.ColumnSpan ="5" Background="#2f5cb6" />
         
-        <Border Grid.Row="1" Grid.ColumnSpan="5" Background="#152951"/>
-      
-        
-        
-        
+        <Border Grid.Row="1" Grid.ColumnSpan="5" Background="#152951">
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click">
+                <Button.Flyout>
+                    <Flyout/>
+                </Button.Flyout>
+            </Button>
+        </Border>
+
+
+
+
         <StackPanel Grid.ColumnSpan="5" >
         <TextBlock Foreground="Black" FontSize="25" Text="Finance App" TextAlignment="Center" />
         </StackPanel>
+        
+        
+        <Button Content="Click me">
+            <Button.Flyout>
+                <Flyout>
+                    <TextBlock Text="This is a flyout!"/>
+                </Flyout>
+            </Button.Flyout>
+        </Button>
 
-        
-        
-        
+        <Image Source="Assets/StoreLogo.png" Width="50" Height="50"
+  Margin="10" Tapped="Image_Tapped" HorizontalAlignment="Right">
+            <FlyoutBase.AttachedFlyout>
+                <Flyout>
+                    <TextBlock Text="This is some text in a flyout."  />
+                </Flyout>
+            </FlyoutBase.AttachedFlyout>
+        </Image>
+
+
         <NavigationView x:Name="NavView" Grid.RowSpan="2">
 
             <NavigationView.MenuItems>
@@ -47,8 +68,8 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItemSeparator/>
-                <NavigationViewItemHeader Content="Main pages"/>
-                <NavigationViewItem x:Uid="AppsNavItem" Icon="AllApps" Content="Apps" Tag="apps"/>
+                <NavigationViewItemHeader Content="Accounts"/>
+                <NavigationViewItem x:Uid="AppsNavItem" Icon="AllApps" Content="Checking" Tag="checking"/>
                 <NavigationViewItem x:Uid="GamesNavItem" Icon="Video" Content="Games" Tag="games"/>
                 <NavigationViewItem x:Uid="MusicNavItem" Icon="Audio" Content="Music" Tag="music"/>
             </NavigationView.MenuItems>
@@ -113,5 +134,8 @@
             <TextBlock Foreground="Black" FontSize="25" Text="Difference" TextAlignment="Center" FontWeight="Bold" FocusVisualPrimaryBrush="#FFF90F0F" />
         </StackPanel>
 
+        <HyperlinkButton Content="Click to go to page 2"
+                 Click="HyperlinkButton_Click"
+                 HorizontalAlignment="Center"/>
     </Grid>
 </Page>

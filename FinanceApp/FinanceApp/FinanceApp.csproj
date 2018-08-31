@@ -98,10 +98,15 @@
     <Compile Include="Checking.xaml.cs">
       <DependentUpon>Checking.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Months.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase.cs" />
     <Compile Include="Recording.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +131,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Checking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
